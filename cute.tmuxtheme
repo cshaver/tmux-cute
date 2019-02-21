@@ -1,0 +1,87 @@
+#
+# Cute Theme
+# Based on Powerline Double Magenta by Jim Myhrberg (https://github.com/jimeh/tmux-themepack)
+#
+
+# Status update interval
+set -g status-interval 1
+
+pink=colour211
+white=colour015
+dark1=colour000
+dark2=colour001
+dark3=colour002
+dark4=colour003
+dark5=colour004
+dark6=colour005
+
+gray=colour008
+black=colour000
+
+foreground=$gray
+background=$black
+statusfg=$pink
+
+# Basic status bar colors
+set -g status-fg $foreground
+set -g status-bg $background
+
+# Left side of status bar
+set -g status-left-bg $background
+set -g status-left-fg $black
+set -g status-left-length 40
+# set -g status-left "#[fg=$background,bg=$pink] #S #[fg=$pink,bg=$foreground,nobold]|>#[fg=$background,bg=$foreground] #(whoami) #[fg=$foreground,bg=$dark2]|>#[fg=$foreground,bg=$dark2] #I:#P #[fg=$dark2,bg=$background,nobold]|>"
+set -g status-left "#[fg=$background,bg=$pink] #S #[fg=$pink,bg=$background,nobold]|>"
+
+# Right side of status bar
+set -g status-right-bg $background
+set -g status-right-fg $dark5
+set -g status-right-length 150
+# set -g status-right "#[fg=$dark2,bg=$background]<|#[fg=$foreground,bg=$dark2] %H:%M:%S #[fg=$foreground,bg=$dark2]<|#[fg=$background,bg=$foreground] %d-%b-%y #[fg=$pink,bg=$foreground]<|#[fg=$background,bg=$pink,bold] #H "
+set -g status-right ""
+
+# Window status
+set -g window-status-format "  #I:#W#F  "
+set -g window-status-current-format "#[fg=$background,bg=black,bold]|>#[fg=$statusfg,nobold] #I:#W#F #[fg=$background,bg=black,bold]<|"
+
+# Current window status
+set -g window-status-current-bg $pink
+set -g window-status-current-fg $dark2
+
+# Window with activity status
+set -g window-status-activity-bg $dark6 # fg and bg are flipped here due to
+set -g window-status-activity-fg $background # a bug in tmux
+
+# Window separator
+set -g window-status-separator ""
+
+# Window status alignment
+set -g status-justify centre
+
+# Pane border
+set -g pane-border-bg default
+set -g pane-border-fg $dark3
+
+# Active pane border
+set -g pane-active-border-bg default
+set -g pane-active-border-fg $pink
+
+# Pane number indicator
+set -g display-panes-colour $background
+set -g display-panes-active-colour $dark6
+
+# Clock mode
+set -g clock-mode-colour $pink
+set -g clock-mode-style 24
+
+# Message
+set -g message-bg $pink
+set -g message-fg black
+
+# Command message
+set -g message-command-bg $background
+set -g message-command-fg black
+
+# Mode
+set -g mode-bg $pink
+set -g mode-fg $white
