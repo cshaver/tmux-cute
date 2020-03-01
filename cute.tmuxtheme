@@ -31,7 +31,7 @@ set -g status-left-bg $background
 set -g status-left-fg $black
 set -g status-left-length 40
 # set -g status-left "#[fg=$background,bg=$pink] #S #[fg=$pink,bg=$foreground,nobold]|>#[fg=$background,bg=$foreground] #(whoami) #[fg=$foreground,bg=$dark2]|>#[fg=$foreground,bg=$dark2] #I:#P #[fg=$dark2,bg=$background,nobold]|>"
-set -g status-left "#[fg=$background,bg=$pink] #S #[fg=$pink,bg=$background,nobold]|>"
+set -g status-left "#[fg=$pink,bg=$background] #S ☾"
 
 # Right side of status bar
 set -g status-right-bg $background
@@ -41,8 +41,9 @@ set -g status-right-length 150
 set -g status-right ""
 
 # Window status
-set -g window-status-format "  #I:#W#F  "
-set -g window-status-current-format "#[fg=$background,bg=black,bold]|>#[fg=$statusfg,nobold] #I:#W#F #[fg=$background,bg=black,bold]<|"
+set -g window-status-format " #W (ᵕ ᵕ･) "
+# set -g window-status-format "  #I:#W#F  "
+set -g window-status-current-format "#[fg=$background,bg=black,bold] #[fg=$statusfg,nobold]#W#[fg=$background,bg=black,bold] (◕◡◕✿) "
 
 # Current window status
 set -g window-status-current-bg $pink
